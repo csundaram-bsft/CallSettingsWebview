@@ -148,11 +148,12 @@
 					${line.separator}	
 					String brandableApp = request.getParameter(&quot;brandable&quot;); ${line.separator}
 					if(brandableApp == null || brandableApp.trim().length() &lt;= 0) { ${line.separator}
-						if(!(request.getMethod().equals(&quot;POST&quot;) &amp;&amp; request.getContentLength() > 0) ) { ${line.separator}
-							response.setStatus(HttpServletResponse.SC_BAD_REQUEST); ${line.separator}
-							out.println(&quot;Invalid request received from the application. Please check the request method and request content. Only HTTP POST supported.&quot;); ${line.separator}
-							ChannelLoggerUtil.getLogger().log(ChannelSeverity.WARN, &quot;cswindex.jsp &quot;, &quot;Invalid request type or no request content received.&quot; ); ${line.separator}
-							return; ${line.separator}
+						if(request.getMethod().equals(&quot;GET&quot;) &amp;&amp; request.getParameter(&quot;TokenId&quot;)	!= null &amp;&amp; request.getParameter(&quot;JID&quot;) != null &amp;&amp; request.getParameter(&quot;Language&quot;) != null)  { ${line.separator}
+								 JSONObject userDetail = new JSONObject(); ${line.separator}
+								 userDetail.put(&quot;userId&quot;, request.getParameter(&quot;JID&quot;)); ${line.separator}
+                 userDetail.put(&quot;authorization&quot;, request.getParameter(&quot;TokenId&quot;)); ${line.separator}
+                 userDetail.put(&quot;language&quot;, request.getParameter(&quot;Language&quot;)); ${line.separator}
+								 heroApplicationInput = userDetail.toString(); 
 						} ${line.separator}
 					} ${line.separator}
 					
@@ -182,13 +183,6 @@
 						ChannelLoggerUtil.getLogger().log(ChannelSeverity.WARN, &quot;cswindex.jsp &quot;, &quot;Exception occurred while getting XSI Path or URL.&quot; + ApplicationUtil.getStackTrace(ex) ); ${line.separator}
 					}	${line.separator}
 					${line.separator}${line.separator}
-					try { ${line.separator}
-						${line.separator}
-					displayCriteriaOrScheduleName = ApplicationUtil.getDisplayCriteriaOrScheduleName(request);${line.separator}
-					} catch (Exception ex) { ${line.separator}
-						ChannelLoggerUtil.getLogger().log(ChannelSeverity.WARN, &quot;cswindex.jsp &quot;, &quot;Exception occurred while setting criteria or schedule Name.&quot; + ApplicationUtil.getStackTrace(ex) ); ${line.separator}
-					}	${line.separator}
-					${line.separator}
 					%&gt; ${line.separator}
 				">
 				

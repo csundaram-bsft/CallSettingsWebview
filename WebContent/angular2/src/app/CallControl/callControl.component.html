@@ -6,19 +6,19 @@
         <mat-card-subtitle class="primaryColor restrictiveSmallLabelStyle callSettingsFontFamily" *ngIf="!getCCRetrievingError() && callCenterService.fetchCCAcdState()" tabindex="0">{{customizedTextJson.callcenter.status}} - {{callCenterService.fetchCCAcdState()}}</mat-card-subtitle>
         <mat-card-subtitle class="primaryColor restrictiveSmallLabelStyle callSettingsFontFamily" *ngIf="!getCCRetrievingError() && !callCenterService.fetchCCAcdState()" tabindex="0"></mat-card-subtitle>
         <mat-spinner [diameter]="20" style="margin-left: 20px; margin-bottom: 8px" [class.callsettingHide]="getCCupdate()"> </mat-spinner>
-        <div *ngIf="!isCallcenterExpanded && !getCCRetrievingError()" class=" settingExpandIcon  "></div>
-        <div *ngIf="isCallcenterExpanded && !getCCRetrievingError()" class=" settingCollapseIcon ">
-        </div>
+        <!-- <div *ngIf="!isCallcenterExpanded && !getCCRetrievingError()" class=" settingExpandIcon  "></div>
+        <div *ngIf="isCallcenterExpanded && !getCCRetrievingError()" class=" settingCollapseIcon "> 
+        </div>-->
         <p mat-line class="callsettingTwoLinesHeaderServerErrorMsg" *ngIf="getCCRetrievingError()">
             <label class="restrictiveSmallLabelStyle errorTextColor callSettingsFontFamily" tabindex="0">{{getCCRetrievingError()}}</label>
         </p>
     </mat-card>
-    <mat-card *ngIf="isCallcenterExpanded && !getCCRetrievingError()">
+    <mat-card *ngIf="canCallCenterExpand && !getCCRetrievingError()">
         <app-call-center></app-call-center>
     </mat-card>
 </mat-card>
 
-<mat-card class="seperators" [class.callsettingDisable]="bwMobilityRetrievingError" *ngIf='broadWorksMobilityVisible'>
+<!-- <mat-card class="seperators" [class.callsettingDisable]="bwMobilityRetrievingError" *ngIf='broadWorksMobilityVisible'>
     <mat-card (click)=focusBroadWorksMobility()>
         <mat-card-title class="primaryContentText restrictiveButtonStyle callSettingsFontFamily"  [class.errorTextColor]="bwMobilityRetrievingError" (keyup.enter)=focusBroadWorksMobility() tabindex="0">{{customizedTextJson.broadworks_mobility.name}}</mat-card-title>
         <mat-card-subtitle *ngIf="isBroadWorksMobilityActive == true" class="primaryColor restrictiveSmallLabelStyle callSettingsFontFamily" [class.callsettingHide]="bwMobilityRetrievingError" tabindex="0">{{customizedTextJson.broadworks_mobility.on_text}}</mat-card-subtitle>
@@ -57,5 +57,5 @@
     <mat-card *ngIf="isBWAnywhereExpanded "  >
         <app-broadworks-anywhere></app-broadworks-anywhere>
     </mat-card>
-</mat-card>
+</mat-card> -->
 

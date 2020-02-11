@@ -23,17 +23,13 @@
 <div *ngIf="getIsCCIdAvailable() == true" class="settingBorder">
     <mat-card>
         <mat-list class="controlBackground primaryContentText">
-            <mat-list-item class="itemHeight44 messageIndicatorAlign" (click)="callCenterChecked()" tabindex="0">
-                <label class="restrictiveLabelStyle" (keyup.enter)="callCenterChecked()" tabindex="0">{{customizedTextJson.callcenter.callcenter_id}}</label>
+            <mat-list-item class="itemHeight44 messageIndicatorAlign"  tabindex="0">
+                <label class="restrictiveLabelStyle" tabindex="0">{{customizedTextJson.callcenter.callcenter_id}}</label>
                 <mat-spinner [diameter]="20" [class.callsettingHide]="isCallCenterIdUpdated"> </mat-spinner>
-                <div *ngIf="isCallCenterChecked == true" class="settingCollapseIcon callCenterArrow">
-                </div>
-                <div *ngIf="isCallCenterChecked == false" class="settingExpandIcon callCenterArrow">
-                </div>
             </mat-list-item>
         </mat-list>
     </mat-card>
-    <mat-card *ngIf="isCallCenterChecked" class="controlBackground">
+    <mat-card class="controlBackground">
         <div *ngFor="let ccElement of callcenterArray ; let i = index ">
             <div *ngIf="ccElement">
                 <mat-list class="primaryContentText">

@@ -87,21 +87,22 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   postGeneratedLoginToken() {
     this.xsiServices.getXSIService(this.serviceRouteProvider.fetchServicesListUrl(), this.postXSIGet.bind(this));
-    this.isReady = true;
+    /*Commented for Bouygues*/
+    //this.isReady = true;
   }
 
   postXSIGet(masterServicesList) {
-
-    this.isReady = true;
+   /*Commented for Bouygues*/
+   // this.isReady = true;
     if (!masterServicesList) {
       /*No services is to be shown */
       console.log('No services is to be shown ');
     } else { /*Check the visibility criteria for the section headers*/
       console.log('Master Services List: ', this.xsiServices.fetchMasterServicesList());
 
-      this.checkOutgoingCallsVisible();
-      this.checkIncomingCallsVisible();
-      this.checkVoiceMailVisible();
+      //this.checkOutgoingCallsVisible();
+      //this.checkIncomingCallsVisible();
+      //this.checkVoiceMailVisible();
       this.checkCallControlVisible();
       this.checkNoServiceVisible();
 
@@ -231,26 +232,33 @@ export class AppComponent implements OnInit, AfterViewInit {
     let isCallCenterVisible = false;
     let isBroadWorksAnywhereVisible = false;
 
-    if (this.serviceRouteProvider.fetchBroadWorksMobilityUrl()) {
-      isBroadWorksMobilityVisible = this.xsiServices.fetchBWMobilityVisible();
-    } else {
-      this.xsiServices.setBWMobilityVisible(isBroadWorksMobilityVisible);
-    }
+     /*Commented for Bouygues*/
+    // if (this.serviceRouteProvider.fetchBroadWorksMobilityUrl()) {
+    //   isBroadWorksMobilityVisible = this.xsiServices.fetchBWMobilityVisible();
+    // } else {
+    //   this.xsiServices.setBWMobilityVisible(isBroadWorksMobilityVisible);
+    // }
+  
+    // if (this.serviceRouteProvider.fetchBroadWorksAnywhereUrl()) {
+    //   isBroadWorksAnywhereVisible = this.xsiServices.fetchBroadWorksAnywhereVisible();
+    // } else {
+    //   this.xsiServices.setBroadWorksAnywhereVisible(isBroadWorksAnywhereVisible);
+    // }
     if (this.serviceRouteProvider.fetchCallCenterUrl()) {
       isCallCenterVisible = this.xsiServices.fetchCallcenterQueueVisible();
     } else {
       this.xsiServices.setCallcenterQueueVisible(isCallCenterVisible);
     }
-    if (this.serviceRouteProvider.fetchBroadWorksAnywhereUrl()) {
-      isBroadWorksAnywhereVisible = this.xsiServices.fetchBroadWorksAnywhereVisible();
-    } else {
-      this.xsiServices.setBroadWorksAnywhereVisible(isBroadWorksAnywhereVisible);
-    }
+    
     if (!isBroadWorksMobilityVisible && !isCallCenterVisible && !isBroadWorksAnywhereVisible) {
       this.isCallControlVisible = false;
     } else {
       this.isCallControlVisible = true;
     }
+     /*Added for Bouygues*/
+    this.isReady = true;
+
+
   }
 
   incomingCallExpanded() {

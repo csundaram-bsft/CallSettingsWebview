@@ -38,6 +38,8 @@ export class CallControlComponent implements OnInit {
   isCallCenterQueueVisible = false;
   isBWMobilityExpanded: boolean;
   isCallcenterExpanded: boolean;
+  canCallCenterExpand: boolean;
+
 
 
   constructor(private xsiServices: XSIServices, private broadWorksMobilityService: BroadWorksMobilityService,
@@ -52,10 +54,12 @@ export class CallControlComponent implements OnInit {
     BroadworksMobilityComponent.isBWMobFetchingFirstTime = true;
     CallCenterComponent.isCallcenterFetchedFirstTime = true ;
 
-    this.initializeBWMobility();
-    this.initializeCallCenterQueue();
     this.initializeProfileData();
-    this.initializeBroadWorksAnywhere();
+    this.initializeCallCenterQueue();
+
+    /* Commented for Bouygues*/
+    // this.initializeBWMobility();
+    // this.initializeBroadWorksAnywhere();
   }
 
   initializeBWMobility() {
@@ -79,6 +83,7 @@ export class CallControlComponent implements OnInit {
     }
     if (this.isCallCenterQueueVisible) {
       CallCenterComponent.isCallCenterUpdated = false;
+      this.canCallCenterExpand = false;
       CallCenterComponent.callcenterServiceRetrievingError = '';
       this.callCenterService.getCallCenterService(this.serviceRouteProvider.fetchCallCenterUrl(), this.postCallCenterDataGet.bind(this));
     }
@@ -177,7 +182,7 @@ export class CallControlComponent implements OnInit {
 
   postCallCenterDataGet(error) {
 
-    CallCenterComponent.isCallCenterUpdated = true;
+  
     if (error) {
       if (error.status === 0) {
         CallCenterComponent.callcenterServiceRetrievingError = this.customizedTextJson.error.networkerror;
@@ -187,6 +192,9 @@ export class CallControlComponent implements OnInit {
     } else {
       CallCenterComponent.acdStateSelected = this.callCenterService.fetchCCAcdState();
     }
+    CallCenterComponent.isCallCenterUpdated = true;
+    this.canCallCenterExpand = true;
+
   }
 
 
