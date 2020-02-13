@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URLDecoder;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -22,6 +23,7 @@ import com.broadsoft.xsp.app.base.ChannelSeverity;
 import com.broadsoft.xsp.app.base.IXSPAppContext;
 import com.broadsoft.xsp.app.base.XSPAppConstants;
 
+import net.sf.json.JSONObject;
 public class CustomStylesServlet extends HttpServlet {
 
 	private String localizationResourcePath;
@@ -33,6 +35,8 @@ public class CustomStylesServlet extends HttpServlet {
 	private Map<String, String> tabFontSizeDefaults = new HashMap<String, String>(5);
 
 	private Map<String, String> dtFontSizeDefaults = new HashMap<String, String>(5);
+
+	private static Map<String, String> DEFAULT_COLORS = new LinkedHashMap<String, String>();
 
 	private String defaultFont = AppConstants.ROBOTO_FONT;
 
@@ -95,7 +99,8 @@ public class CustomStylesServlet extends HttpServlet {
 		StringBuilder cssTemplateContent = ApplicationUtil
 				.getFileContent(new File(localizationResourcePath, AppConstants.CUSTOM_STYLE_TEMPLATE_FILE), AppConstants.UTF8_ENCODING);
 
-		cssTemplateContent = setCustomColors(requestParameters, cssTemplateContent);
+		
+		cssTemplateContent = setCustomColors(getBrandedValuesFromPath(), cssTemplateContent);
 
 		cssTemplateContent = setCustomFonts(requestParameters, cssTemplateContent);
 
@@ -106,6 +111,31 @@ public class CustomStylesServlet extends HttpServlet {
 		response.getWriter().write(cssTemplateContent.toString());
 		response.setContentType(AppConstants.CSS_RESPONSE_TYPE);
 
+	}
+
+	private Map<String,String> getBrandedValuesFromPath(){
+		/* To read colors from default path in XSP for BouyguesCSWV*/
+		try {
+			String domainConfigurations = ApplicationUtil.getFileContent(
+			new File(localizationResourcePath + File.separator + "branding" + File.separator + AppConstants.CUSTOM_COLORS),
+			AppConstants.UTF8_ENCODING).toString();
+			System.out.println("File contents read : " + domainConfigurations);
+			
+
+			JSONObject defaultColors = JSONObject.fromObject(domainConfigurations);
+			Iterator<?> colorDefaultsIter = ((JSONObject) defaultColors.get("color")).keySet().iterator();
+			while (colorDefaultsIter.hasNext()) {
+				String colorName = (String) colorDefaultsIter.next();
+
+                String color = (String)((JSONObject) defaultColors.get("color")).get(colorName);
+
+              DEFAULT_COLORS.put(colorName, color);
+			}
+			
+		}catch (Exception ex) {
+			System.out.println("Exception occurred in CustomStylesServlet initialization " + ApplicationUtil.getStackTrace(ex));
+		}
+		return DEFAULT_COLORS;
 	}
 
 	private Map<String, String> getBrandedValuesFromRequest(String queryString) {

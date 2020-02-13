@@ -151,7 +151,7 @@
 						if(request.getMethod().equals(&quot;GET&quot;) &amp;&amp; request.getParameter(&quot;TokenId&quot;)	!= null &amp;&amp; request.getParameter(&quot;JID&quot;) != null &amp;&amp; request.getParameter(&quot;Language&quot;) != null)  { ${line.separator}
 								 JSONObject userDetail = new JSONObject(); ${line.separator}
 								 userDetail.put(&quot;userId&quot;, request.getParameter(&quot;JID&quot;)); ${line.separator}
-                 userDetail.put(&quot;authorization&quot;, request.getParameter(&quot;TokenId&quot;)); ${line.separator}
+                 userDetail.put(&quot;loginToken&quot;, request.getParameter(&quot;TokenId&quot;)); ${line.separator}
                  userDetail.put(&quot;language&quot;, request.getParameter(&quot;Language&quot;)); ${line.separator}
 								 heroApplicationInput = userDetail.toString(); 
 						} ${line.separator}

@@ -9,7 +9,7 @@ public class AppConstants {
 	public static final String KEY_APP_APPLICATION_CURRENT_USER = "appCurrentUser";
 	
 	public static final String KEY_APP_APPLICATION_LOGGER = "channelAppLogger";
-	public static final String CALL_SETTINGS_WEB_CHANNEL = "BWCallSettingsWeb";
+	public static final String CALL_SETTINGS_WEB_CHANNEL = "BouyguesCSWV";
 	public static final String GENERIC_INTERFACE_CHANNEL = "Generic";
 	public static final String HTTP_CHANNEL = "Http";
 	
@@ -21,6 +21,7 @@ public class AppConstants {
 	public static final String CSS_RESPONSE_TYPE = "text/css";
 	
 	public static final String LOCALE_CUSTOM_TEXTS = "callsettings.json";
+	public static final String CUSTOM_COLORS = "colors.json";
 	
 	public static final String RESOURCE_KEY_XSI_HTTP_MANAGER = "xsi.http.manager";
 	public static final String RESOURCE_KEY_ACTIONS_URL = "callsettingsweb.xsi.actionsurl";
