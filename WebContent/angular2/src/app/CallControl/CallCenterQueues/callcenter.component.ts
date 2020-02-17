@@ -71,7 +71,7 @@ export class CallCenterComponent implements OnInit {
       }
       this.callcenterArray = this.callCenterServiceInput.getCallCenterArray();
       this.initializeCallCenterNames();
-      CallCenterComponent.isCallcenterFetchedFirstTime = true;
+      CallCenterComponent.isCallcenterFetchedFirstTime = false;
     } else {
 
       this.initializeCCqueue();

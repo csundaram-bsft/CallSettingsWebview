@@ -55,7 +55,6 @@ export class CallControlComponent implements OnInit {
     CallCenterComponent.isCallcenterFetchedFirstTime = true ;
 
     this.initializeProfileData();
-    this.initializeCallCenterQueue();
 
     /* Commented for Bouygues*/
     // this.initializeBWMobility();
@@ -77,7 +76,7 @@ export class CallControlComponent implements OnInit {
 
 
   initializeCallCenterQueue() {
-
+    console.log('Get call queues ');
     if ((this.serviceRouteProvider.fetchCallCenterUrl())) {
       this.isCallCenterQueueVisible = this.xsiServices.fetchCallcenterQueueVisible();
     }
@@ -182,7 +181,7 @@ export class CallControlComponent implements OnInit {
 
   postCallCenterDataGet(error) {
 
-  
+
     if (error) {
       if (error.status === 0) {
         CallCenterComponent.callcenterServiceRetrievingError = this.customizedTextJson.error.networkerror;
@@ -201,6 +200,7 @@ export class CallControlComponent implements OnInit {
   postProfileDataGet(profileParsedJSON) {
     if (profileParsedJSON) {
       console.log('Fetched profile ');
+      this.initializeCallCenterQueue();
     } else {
       CallCenterComponent.callcenterServiceRetrievingError = this.customizedTextJson.error.unabletofetch;
       console.log('Fetched profile FAIL');
