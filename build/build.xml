@@ -150,20 +150,10 @@
 					if(brandableApp == null || brandableApp.trim().length() &lt;= 0) { ${line.separator}
 						if(request.getMethod().equals(&quot;GET&quot;) &amp;&amp; request.getParameter(&quot;TokenId&quot;)	!= null &amp;&amp; request.getParameter(&quot;JID&quot;) != null &amp;&amp; request.getParameter(&quot;Language&quot;) != null)  { ${line.separator}
 								 JSONObject userDetail = new JSONObject(); ${line.separator}
-								 String userId = request.getParameter(&quot;UserId&quot;); ${line.separator}
-		if(userId != null &amp;&amp; userId.contains(&quot;@&quot;)) { ${line.separator}
-			userDetail.put(&quot;userId&quot;, userId); ${line.separator}
-		} ${line.separator}
-		else { ${line.separator}
-			String JID = request.getParameter(&quot;JID&quot;); ${line.separator}
-			if(JID != null &amp;&amp; JID.contains(&quot;@&quot;)) { ${line.separator}
-				userId = userId + &quot;@&quot; +JID.split(&quot;@&quot;)[1]; ${line.separator}
-			} ${line.separator}
-		} ${line.separator}
+								 userDetail.put(&quot;userId&quot;, request.getParameter(&quot;JID&quot;)); ${line.separator}
                  userDetail.put(&quot;loginToken&quot;, request.getParameter(&quot;TokenId&quot;)); ${line.separator}
                  userDetail.put(&quot;language&quot;, request.getParameter(&quot;Language&quot;)); ${line.separator}
-								 heroApplicationInput = userDetail.toString(); ${line.separator}
-								 ChannelLoggerUtil.getLogger().log(ChannelSeverity.FIELD_DEBUG, &quot;cswindex.jsp &quot;, &quot; Request params read from request, : &quot;+heroApplicationInput); ${line.separator}
+								 heroApplicationInput = userDetail.toString(); 
 						} ${line.separator}
 					} ${line.separator}
 					
