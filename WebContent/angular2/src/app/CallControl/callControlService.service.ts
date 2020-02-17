@@ -17,7 +17,7 @@ export class CallControlService {
         this.httpServices.httpGetRequest(profileUrl)
         .subscribe((res) => {
             let profileParsedJson = res.json();
-            console.log('Profile Parsed JSON: ', profileParsedJson);
+            console.log('Profile Parsed JSON: ', JSON.stringify(profileParsedJson, null, '    '));
             if (profileParsedJson.Profile.details.number) {
                 this.callControlServiceInput.setPrimaryNumber(profileParsedJson.Profile.details.number.$);
                 console.log('Number >>>>>', profileParsedJson.Profile.details.number.$)
