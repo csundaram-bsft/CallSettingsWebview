@@ -1,6 +1,13 @@
 {
 	"services": {
 		"en_US": {
+			"error": {				
+				"updatefailed": "Unable to update data. Try again or contact the administrator.",
+				"unabletofetch": "Settings unavailable. Try again or contact the administrator.",
+				"networkerror": "Your network is offline.",
+				"noservice": "Settings unavailable. Try again or contact the administrator."
+		
+			},
 			"callcenter": {
 				"name": "Call Center Queues",
 				"status": "Status",
@@ -12,10 +19,18 @@
 				"wrap_up": "Wrapping Up",
 				"callcenter_id": "Call Center ID's",
 				"extension": "ext.",
-				"none": "None"
+				"none": "None",
+				"basic":"Basic Call Center is Active"
 			}
 		},
 		"fr_FR": {
+			"error": {
+				      
+					"updatefailed": "Impossible de mettre à jour les données. Réessayez ou contactez l'administrateur.",
+					"unabletofetch": "Paramètres non disponibles. Réessayez ou contactez l'administrateur",
+					"networkerror": "Votre réseau est hors connexion.",
+					"noservice": "Paramètres non disponibles. Réessayez ou contactez l'administrateur."
+			},
 			"callcenter": {
 				"name": "Files d'attente des centres d'appel",
 				"status": "État",
@@ -27,7 +42,8 @@
 				"wrap_up": "En train de terminer",
 				"callcenter_id": "ID du centre d'appel",
 				"extension": "poste",
-				"none": "Aucun(e)"
+				"none": "Aucun(e)",
+				"basic":"Le centre d'appels de base est actif"
 			}
 		}
 	}

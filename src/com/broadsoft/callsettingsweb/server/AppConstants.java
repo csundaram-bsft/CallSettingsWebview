@@ -21,7 +21,7 @@ public class AppConstants {
 	public static final String CSS_RESPONSE_TYPE = "text/css";
 	
 	public static final String LOCALE_CUSTOM_TEXTS = "callsettings.json";
-	public static final String CUSTOM_COLORS = "colors.json";
+	public static final String COLORS = "colors.json";
 	
 	public static final String RESOURCE_KEY_XSI_HTTP_MANAGER = "xsi.http.manager";
 	public static final String RESOURCE_KEY_ACTIONS_URL = "callsettingsweb.xsi.actionsurl";

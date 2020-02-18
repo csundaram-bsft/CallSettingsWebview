@@ -117,7 +117,7 @@ public class CustomStylesServlet extends HttpServlet {
 		/* To read colors from default path in XSP for BouyguesCQWL*/
 		try {
 			String domainConfigurations = ApplicationUtil.getFileContent(
-			new File(localizationResourcePath + File.separator + "branding" + File.separator + AppConstants.CUSTOM_COLORS),
+			new File(localizationResourcePath + File.separator + "branding" + File.separator + AppConstants.COLORS),
 			AppConstants.UTF8_ENCODING).toString();
 			System.out.println("File contents read : " + domainConfigurations);
 			
