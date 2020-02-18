@@ -5,8 +5,8 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
 	
-	<display-name>BouyguesCSWV</display-name>
-	<description>BroadWorks CallSettings Web application</description>
+	<display-name>BouyguesCQWL</display-name>
+	<description>Bouygues Call Queues Web Link application</description>
 
 	<listener>
   		<listener-class>com.broadsoft.xsp.logging.LoggingInitializer</listener-class> 

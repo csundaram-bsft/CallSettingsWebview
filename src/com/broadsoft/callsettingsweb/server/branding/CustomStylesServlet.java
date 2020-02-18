@@ -114,7 +114,7 @@ public class CustomStylesServlet extends HttpServlet {
 	}
 
 	private Map<String,String> getBrandedValuesFromPath(){
-		/* To read colors from default path in XSP for BouyguesCSWV*/
+		/* To read colors from default path in XSP for BouyguesCQWL*/
 		try {
 			String domainConfigurations = ApplicationUtil.getFileContent(
 			new File(localizationResourcePath + File.separator + "branding" + File.separator + AppConstants.CUSTOM_COLORS),

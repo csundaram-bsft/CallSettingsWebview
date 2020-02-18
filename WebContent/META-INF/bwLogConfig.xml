@@ -32,7 +32,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaRev="17.3.33">
       <categories></categories>
     </entry>
     <entry>
-      <name>BouyguesCSWV</name>
+      <name>BouyguesCQWL</name>
       <enabled>true</enabled>
       <severity>Info</severity>
       <class></class>
@@ -52,7 +52,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaRev="17.3.33">
       <newLinesBeforeBody>2</newLinesBeforeBody>
       <newLinesAfterBody>1</newLinesAfterBody>
       <dir>/var/broadworks/logs/xsp</dir>
-      <filePrefix>BouyguesCSWV</filePrefix>
+      <filePrefix>BouyguesCQWL</filePrefix>
       <fileSizeMegs>30</fileSizeMegs>
       <numberOfFiles>100</numberOfFiles>
     </entry>

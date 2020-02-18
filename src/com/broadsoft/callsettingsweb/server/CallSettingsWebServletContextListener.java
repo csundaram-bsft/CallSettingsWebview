@@ -31,7 +31,7 @@ public class CallSettingsWebServletContextListener extends XSPAppServletContextL
 	 */
 	@Override
 	protected String getApplicationName() {
-		return "BouyguesCSWV";
+		return "BouyguesCQWL";
 	}
 
 	/**
