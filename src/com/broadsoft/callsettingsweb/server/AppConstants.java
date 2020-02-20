@@ -21,7 +21,7 @@ public class AppConstants {
 	public static final String CSS_RESPONSE_TYPE = "text/css";
 	
 	public static final String LOCALE_CUSTOM_TEXTS = "callsettings.json";
-	public static final String COLORS = "colors.json";
+	public static final String CUSTOM_COLORS = "colors.json";
 	
 	public static final String RESOURCE_KEY_XSI_HTTP_MANAGER = "xsi.http.manager";
 	public static final String RESOURCE_KEY_ACTIONS_URL = "callsettingsweb.xsi.actionsurl";
@@ -60,12 +60,12 @@ public class AppConstants {
 	public static final String STYLE_CATEGORY_RESTRICTIVE_LABEL_STYLE = "RestrictiveLabelStyle";
 	public static final String STYLE_CATEGORY_RESTRICTIVE_SMALL_LABEL_STYLE = "RestrictiveSmallLabelStyle";
 	
-	public static final String RESTRICTIVE_BUTTON_MOB_DEFAULT = "16";
-	public static final String RESTRICTIVE_LABEL_MOB_DEFAULT = "14";
+	public static final String RESTRICTIVE_BUTTON_MOB_DEFAULT = "17";
+	public static final String RESTRICTIVE_LABEL_MOB_DEFAULT = "15";
 	public static final String RESTRICTIVE_SMALL_LABEL_MOB_DEFAULT = "13";
 	
-	public static final String RESTRICTIVE_BUTTON_TAB_DEFAULT = "16";
-	public static final String RESTRICTIVE_LABEL_TAB_DEFAULT = "14";
+	public static final String RESTRICTIVE_BUTTON_TAB_DEFAULT = "17";
+	public static final String RESTRICTIVE_LABEL_TAB_DEFAULT = "15";
 	public static final String RESTRICTIVE_SMALL_LABEL_TAB_DEFAULT = "13";
 	
 	public static final String RESTRICTIVE_BUTTON_DT_DEFAULT = "14";

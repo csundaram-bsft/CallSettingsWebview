@@ -26,7 +26,7 @@ import com.broadsoft.xsp.app.base.XSPAppConstants;
 import net.sf.json.JSONObject;
 public class CustomStylesServlet extends HttpServlet {
 
-	private String localizationResourcePath;
+	private String localizationResourcePath,domainResourcePath;
 
 	private Map<String, String> styleDefaults = new HashMap<String, String>();
 
@@ -51,6 +51,9 @@ public class CustomStylesServlet extends HttpServlet {
 				+ File.separator + "conf" + File.separator
 				+ appContext.getAttribute(XSPAppConstants.KEY_APP_DISPLAY_NAME) + "_"
 				+ (String) appContext.getAttribute(XSPAppConstants.KEY_APP_VERSION);
+
+		domainResourcePath = appContext.getResourceConfiguration()
+				.getConfiguration(AppConstants.SYSTEM_BRANDING_CUSTOM_PATH);
 
 		styleDefaults.put(AppConstants.STYLE_CATEGORY_PRIMARY_BUTTON, AppConstants.PRIMARY_BUTTON_DEFAULT);
 		styleDefaults.put(AppConstants.STYLE_CATEGORY_CONTENT_BACKGROUND, AppConstants.CONTENT_BACKGROUND_DEFAULT);
@@ -117,7 +120,7 @@ public class CustomStylesServlet extends HttpServlet {
 		/* To read colors from default path in XSP for BouyguesCQWL*/
 		try {
 			String domainConfigurations = ApplicationUtil.getFileContent(
-			new File(localizationResourcePath + File.separator + "branding" + File.separator + AppConstants.COLORS),
+			new File(domainResourcePath + File.separator + "branding" + File.separator + AppConstants.CUSTOM_COLORS),
 			AppConstants.UTF8_ENCODING).toString();
 			System.out.println("File contents read : " + domainConfigurations);
 			
