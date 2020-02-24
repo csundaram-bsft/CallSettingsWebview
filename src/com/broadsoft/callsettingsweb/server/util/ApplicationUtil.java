@@ -60,6 +60,10 @@ public class ApplicationUtil {
 		String hostInfo = request.getHeader("X-Forwarded-Host");
 		if (hostInfo != null) {
 			domainValue = hostInfo;
+			if (ChannelLoggerUtil.isLogLevelActive(AppConstants.CALL_SETTINGS_WEB_CHANNEL, ChannelSeverity.DEV_DEBUG)) {
+				ChannelLoggerUtil.getLogger().log(ChannelSeverity.DEV_DEBUG,
+						"getDomainForRequest domainValue from header X-Forwarded-Host : " + domainValue);
+			}
 
 		} else {
 
@@ -79,6 +83,11 @@ public class ApplicationUtil {
 			if(domainValue.endsWith("/")) {
 				domainValue = domainValue.substring(0, domainValue.length()-1);
 			}
+		}
+
+		if (ChannelLoggerUtil.isLogLevelActive(AppConstants.CALL_SETTINGS_WEB_CHANNEL, ChannelSeverity.DEV_DEBUG)) {
+			ChannelLoggerUtil.getLogger().log(ChannelSeverity.DEV_DEBUG,
+					"domainValue set to : " + domainValue);
 		}
 
 		return domainValue;
