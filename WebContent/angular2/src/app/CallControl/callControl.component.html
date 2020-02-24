@@ -2,14 +2,12 @@
 
 <mat-card class="seperators" *ngIf='isCallCenterQueueVisible' [class.callsettingDisable]="getCCRetrievingError()">
     <mat-card (click)=focusCallCenter()>
-        <mat-card-title class="primaryContentText restrictiveButtonStyle callSettingsFontFamily" [class.errorTextColor]="getCCRetrievingError()" (keyup.enter)=focusCallCenter() tabindex="0">{{customizedTextJson.callcenter.name}}</mat-card-title>
-        <!-- Added for basic call center enabled mode-->
-        <mat-card-subtitle class="primaryColor restrictiveSmallLabelStyle callSettingsFontFamily" *ngIf="callCenterService.fetchCCAcdState() == ''" tabindex="0">{{customizedTextJson.callcenter.basic}}</mat-card-subtitle>
-        <mat-card-subtitle class="primaryColor restrictiveSmallLabelStyle callSettingsFontFamily" *ngIf="!getCCRetrievingError() && callCenterService.fetchCCAcdState()" tabindex="0">{{customizedTextJson.callcenter.status}} - {{callCenterService.fetchCCAcdState()}}</mat-card-subtitle>
+        <!-- <mat-card-title class="primaryContentText restrictiveButtonStyle callSettingsFontFamily" [class.errorTextColor]="getCCRetrievingError()" (keyup.enter)=focusCallCenter() tabindex="0">{{customizedTextJson.callcenter.name}}</mat-card-title>
+        <mat-card-subtitle class="primaryColor restrictiveSmallLabelStyle callSettingsFontFamily" *ngIf="!getCCRetrievingError() && callCenterService.fetchCCAcdState()" tabindex="0">{{customizedTextJson.callcenter.status}} - {{callCenterService.fetchCCAcdState()}}</mat-card-subtitle> -->
         <mat-card-subtitle class="primaryColor restrictiveSmallLabelStyle callSettingsFontFamily" *ngIf="!getCCRetrievingError() && !callCenterService.fetchCCAcdState()" tabindex="0"></mat-card-subtitle>
-        <mat-spinner [diameter]="20" style="margin-left: 20px; margin-bottom: 8px" [class.callsettingHide]="getCCupdate()"> </mat-spinner>
+        <mat-spinner [diameter]="20" style="margin-left: 20px; margin-bottom: 0px" [class.callsettingHide]="getCCupdate()"> </mat-spinner>
         <!-- <div *ngIf="!isCallcenterExpanded && !getCCRetrievingError()" class=" settingExpandIcon  "></div>
-        <div *ngIf="isCallcenterExpanded && !getCCRetrievingError()" class=" settingCollapseIcon "> 
+        <div *ngIf="isCallcenterExpanded && !getCCRetrievingError()" class=" settingCollapseIcon ">
         </div>-->
         <p mat-line class="callsettingTwoLinesHeaderServerErrorMsg" *ngIf="getCCRetrievingError()">
             <label class="restrictiveSmallLabelStyle errorTextColor callSettingsFontFamily" tabindex="0">{{getCCRetrievingError()}}</label>
