@@ -103,7 +103,7 @@ public class CustomStylesServlet extends HttpServlet {
 				.getFileContent(new File(localizationResourcePath, AppConstants.CUSTOM_STYLE_TEMPLATE_FILE), AppConstants.UTF8_ENCODING);
 
 		
-		cssTemplateContent = setCustomColors(getBrandedValuesFromPath(), cssTemplateContent);
+		cssTemplateContent = setCustomColors(getBrandedValuesFromPath(requestParameters), cssTemplateContent);
 
 		cssTemplateContent = setCustomFonts(requestParameters, cssTemplateContent);
 
@@ -116,13 +116,29 @@ public class CustomStylesServlet extends HttpServlet {
 
 	}
 
-	private Map<String,String> getBrandedValuesFromPath(){
+	private Map<String,String> getBrandedValuesFromPath(Map<String, String> requestParameters){
 		/* To read colors from default path in XSP for BouyguesCQWL*/
 		try {
-			String domainConfigurations = ApplicationUtil.getFileContent(
-			new File(domainResourcePath + File.separator + "branding" + File.separator + AppConstants.CUSTOM_COLORS),
-			AppConstants.UTF8_ENCODING).toString();
-			System.out.println("File contents read : " + domainConfigurations);
+			String domain = requestParameters.get("userDomain");
+
+			String domainConfigurations ;
+			if(new File(domainResourcePath + File.separator + domain).exists()){
+					domainConfigurations = ApplicationUtil.getFileContent(
+					new File(domainResourcePath + File.separator + domain + File.separator + "branding" + File.separator + AppConstants.CUSTOM_COLORS),
+					AppConstants.UTF8_ENCODING).toString();
+					System.out.println("If block Custom Domain in colors CustomStylesServlet" );
+			}else{
+					domainConfigurations = ApplicationUtil.getFileContent(
+					new File(domainResourcePath + File.separator + "branding" + File.separator + AppConstants.CUSTOM_COLORS),
+					AppConstants.UTF8_ENCODING).toString();
+					System.out.println("Else block Local Domain in colors CustomStylesServlet" );
+			}
+
+
+			ChannelLoggerUtil.getLogger().log(ChannelSeverity.INFO,
+			"Domain :" + domain) ;
+			ChannelLoggerUtil.getLogger().log(ChannelSeverity.INFO,
+			"Domain directory tried to be read from CustomStyles : " + domainConfigurations) ;
 			
 
 			JSONObject defaultColors = JSONObject.fromObject(domainConfigurations);
