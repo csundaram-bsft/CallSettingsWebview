@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "BWCallSettingsWeb": {
+    "BouyguesCQWL": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -49,18 +49,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "BWCallSettingsWeb:build"
+            "browserTarget": "BouyguesCQWL:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "BWCallSettingsWeb:build:production"
+              "browserTarget": "BouyguesCQWL:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "BWCallSettingsWeb:build"
+            "browserTarget": "BouyguesCQWL:build"
           }
         },
         "test": {
@@ -91,7 +91,7 @@
         }
       }
     },
-    "BWCallSettingsWeb-e2e": {
+    "BouyguesCQWL-e2e": {
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -100,7 +100,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "BWCallSettingsWeb:serve"
+            "devServerTarget": "BouyguesCQWL:serve"
           }
         },
         "lint": {
@@ -115,7 +115,7 @@
       }
     }
   },
-  "defaultProject": "BWCallSettingsWeb",
+  "defaultProject": "BouyguesCQWL",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

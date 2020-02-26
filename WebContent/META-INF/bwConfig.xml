@@ -41,7 +41,7 @@
     <display>Branding.customPath</display>
     <help>This parameter specifies the location where the custom branding 
     files are stored on disk in this XSP. Default is 
-    '/var/broadworks/webapps/conf/BWCallSettingsWeb_Version'.
+    '/var/broadworks/webapps/conf/BouyguesCQWL_Version'.
     </help>
     <format defaultValue="">
       <string minLength="1" maxLength="255"></string>

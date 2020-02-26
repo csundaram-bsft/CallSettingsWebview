@@ -27,7 +27,7 @@
 		<description>Name of the Configuration File for this WebApp</description>
 		<env-entry-name>webAppConfigFile</env-entry-name>
 		<env-entry-type>java.lang.String</env-entry-type>
-		<env-entry-value>BWCallSettingsWeb_@appVersion@.properties</env-entry-value>
+		<env-entry-value>BouyguesCQWL_@appVersion@.properties</env-entry-value>
 		
 	</env-entry>
 	
