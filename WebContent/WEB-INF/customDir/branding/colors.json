@@ -1,9 +1,9 @@
 {
 	"color": {
-		"PrimaryButton": "#153B60",
+		"PrimaryButton": "#1C4568",
 		"ContentBackground": "#ffffff",
 		"ControlBackground": "#f8f8f8",
-		"PrimaryBackground": "#153B60",
+		"PrimaryBackground": "#1C4568",
 		"PrimaryText": "#ffffff",
 		"PrimaryContentText": "#323232",
 		"SecondaryContentText": "#646464",
