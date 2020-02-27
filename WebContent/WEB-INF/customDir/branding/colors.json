@@ -1,16 +1,16 @@
 {
 	"color": {
-		"PrimaryButton": "#1C4568",
+		"PrimaryButton": "#153B60",
 		"ContentBackground": "#ffffff",
 		"ControlBackground": "#f8f8f8",
-		"PrimaryBackground": "#1C4568",
+		"PrimaryBackground": "#153B60",
 		"PrimaryText": "#ffffff",
-		"PrimaryContentText": "#000000",
-		"SecondaryContentText": "#666666",
-		"TertiaryContentText": "#333333",
-		"DimmedText": "#666666",
-		"Separators": "#f0f0f0",
+		"PrimaryContentText": "#323232",
+		"SecondaryContentText": "#646464",
+		"TertiaryContentText": "#969696",
+		"DimmedText": "#B4B4B4",
+		"Separators": "#F0F0F0",
 		"SymbolicGreen": "#2ed557",
-		"SymbolicRed": "#ff503c"
+		"SymbolicRed": "#FF3347"
 	}
 }
