@@ -1,7 +1,7 @@
 <!-- Copyright © 2017 BroadSoft Inc. -->
 
 <mat-card class="seperators" *ngIf='isCallCenterQueueVisible' [class.callsettingDisable]="getCCRetrievingError()">
-    <mat-card (click)=focusCallCenter()>
+    <mat-card (click)=focusCallCenter() style="display: none;">
         <!-- <mat-card-title class="primaryContentText restrictiveButtonStyle callSettingsFontFamily" [class.errorTextColor]="getCCRetrievingError()" (keyup.enter)=focusCallCenter() tabindex="0">{{customizedTextJson.callcenter.name}}</mat-card-title>
         <mat-card-subtitle class="primaryColor restrictiveSmallLabelStyle callSettingsFontFamily" *ngIf="!getCCRetrievingError() && callCenterService.fetchCCAcdState()" tabindex="0">{{customizedTextJson.callcenter.status}} - {{callCenterService.fetchCCAcdState()}}</mat-card-subtitle> -->
         <mat-card-subtitle class="primaryColor restrictiveSmallLabelStyle callSettingsFontFamily" *ngIf="!getCCRetrievingError() && !callCenterService.fetchCCAcdState()" tabindex="0"></mat-card-subtitle>
