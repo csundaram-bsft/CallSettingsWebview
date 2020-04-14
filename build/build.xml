@@ -120,7 +120,16 @@
 					String userDomain = &quot;&quot;; ${line.separator}
 					String xsiContextPath = &quot;&quot;; ${line.separator}
 					String displayCriteriaOrScheduleName = &quot;&quot;; ${line.separator}
-				
+					String defaultSystemDomain = &quot;&quot;; ${line.separator}
+
+					${line.separator}${line.separator}
+					try { ${line.separator}
+						${line.separator}
+					defaultSystemDomain = ApplicationUtil.getDefaultSystemDomain(request);${line.separator}
+					} catch (Exception ex) { ${line.separator}
+						ChannelLoggerUtil.getLogger().log(ChannelSeverity.WARN, &quot;cswindex.jsp &quot;, &quot;Exception occurred while getting Default System Domain.&quot; + ApplicationUtil.getStackTrace(ex) ); ${line.separator}
+					}
+
 					${line.separator}${line.separator}
 					try { ${line.separator}
 						${line.separator}
@@ -157,6 +166,11 @@
 								 String userId = request.getParameter(&quot;UserId&quot;); ${line.separator}
 									if(userId != null &amp;&amp; userId.contains(&quot;@&quot;)) { ${line.separator}
 										userDetail.put(&quot;userId&quot;, userId); ${line.separator}
+									} ${line.separator}
+									else if(defaultSystemDomain != null &amp;&amp; defaultSystemDomain.length() > 0){ ${line.separator}
+											userId = userId + &quot;@&quot; + defaultSystemDomain; ${line.separator}
+											ChannelLoggerUtil.getLogger().log(ChannelSeverity.INFO, &quot;cswindex.jsp &quot;, &quot; userId after :  &quot; + userId); ${line.separator}
+											userDetail.put(&quot;userId&quot;, userId); ${line.separator}
 									} ${line.separator}
 									else { ${line.separator}
 										String JID = request.getParameter(&quot;JID&quot;); ${line.separator}

@@ -30,6 +30,15 @@
       <string minLength="1" maxLength="255"></string>
     </format>
   </option>
+  <option>
+    <name>system.general.defaultSystemDomain</name>
+    <display>General.defaultSystemDomain</display>
+    <help>This parameter can be set as default system domain. Default is 'ent.bouyguestelecom.fr'.
+    </help>
+    <format defaultValue="ent.bouyguestelecom.fr">
+      <string minLength="1" maxLength="255"></string>
+    </format>
+  </option>
   <!-- Branding related configuration for the application -->
   <context>
     <display>Branding</display>

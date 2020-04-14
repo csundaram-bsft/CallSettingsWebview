@@ -118,6 +118,19 @@ public class ApplicationUtil {
 		return displayCriteriaOrScheduleName;
 	}
 	
+	public static String getDefaultSystemDomain(HttpServletRequest request) {
+		
+		String defaultDomain = "";
+			
+		defaultDomain = appContext.getResourceConfiguration()
+				.getConfiguration(AppConstants.SYSTEM_GENERAL_DEFAULT_SYSTEM_DOMAIN);
+		
+		ChannelLoggerUtil.getLogger().log(ChannelSeverity.INFO,
+				"defaultSystemDomain : " + defaultDomain);
+		
+		return defaultDomain;
+	}
+	
 	public static String readJSONForAppTest() {
 		
 		String localizationResourcePath = File.separator + "var" + File.separator + "broadworks" + File.separator + "webapps"

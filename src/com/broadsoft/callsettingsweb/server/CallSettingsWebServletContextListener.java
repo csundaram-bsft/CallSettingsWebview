@@ -81,6 +81,8 @@ public class CallSettingsWebServletContextListener extends XSPAppServletContextL
 		
 		configuration.setConfiguration(AppConstants.SYSTEM_GENERAL_XSI_ACTIONS_CONTEXT_URL, "/com.broadsoft.xsi-actions");
 
+		configuration.setConfiguration(AppConstants.SYSTEM_GENERAL_DEFAULT_SYSTEM_DOMAIN, "ent.bouyguestelecom.fr");
+		
 		// configuration.setConfiguration(AppConstants.SYSTEM_GENERAL_DISPLAYCRITERIAORSCHEDULENAME, "criteria");
 		configuration.setConfiguration(AppConstants.SYSTEM_BRANDING_CUSTOM_PATH,
 				File.separator + "var" + File.separator + "broadworks" + File.separator + "webapps" + File.separator

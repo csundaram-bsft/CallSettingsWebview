@@ -16,6 +16,7 @@ public class AppConstants {
 	public static final String SYSTEM_GENERAL_XSI_ACTIONS_CONTEXT_URL = "system.general.xsiActionsContextOrURL";
 	public static final String SYSTEM_GENERAL_DISPLAYCRITERIAORSCHEDULENAME = "system.general.displayCriteriaOrScheduleName";
 	public static final String SYSTEM_BRANDING_CUSTOM_PATH = "system.branding.customPath";
+	public static final String SYSTEM_GENERAL_DEFAULT_SYSTEM_DOMAIN = "system.general.defaultSystemDomain";
 	
 	public static final String CUSTOM_STYLE_TEMPLATE_FILE = "customStyle.css.template";
 	public static final String CSS_RESPONSE_TYPE = "text/css";
